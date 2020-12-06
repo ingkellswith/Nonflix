@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 import Home from "../Routes/Home";
 import TV from "../Routes/TV";
 import Search from "../Routes/Search";
@@ -7,7 +7,7 @@ import Detail from "../Routes/Detail";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -17,7 +17,7 @@ function Router() {
         <Route path="/show/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 } //exact는 exactly same을 뜻함 즉 정확히 일치안하면 실행 안함
 export default Router;
