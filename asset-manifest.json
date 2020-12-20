@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Nonflix/static/css/main.10ae3105.chunk.css",
-    "main.js": "/Nonflix/static/js/main.ad5cc3d3.chunk.js",
-    "main.js.map": "/Nonflix/static/js/main.ad5cc3d3.chunk.js.map",
+    "main.js": "/Nonflix/static/js/main.01b33511.chunk.js",
+    "main.js.map": "/Nonflix/static/js/main.01b33511.chunk.js.map",
     "runtime-main.js": "/Nonflix/static/js/runtime-main.9b686767.js",
     "runtime-main.js.map": "/Nonflix/static/js/runtime-main.9b686767.js.map",
     "static/js/2.8f088d8c.chunk.js": "/Nonflix/static/js/2.8f088d8c.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.9b686767.js",
     "static/js/2.8f088d8c.chunk.js",
     "static/css/main.10ae3105.chunk.css",
-    "static/js/main.ad5cc3d3.chunk.js"
+    "static/js/main.01b33511.chunk.js"
   ]
 }
