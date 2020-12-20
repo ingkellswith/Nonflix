@@ -50,6 +50,7 @@ const Data = styled.div`
 
 const Title = styled.h3`
   font-size: 50px;
+  vertical-align: middle;
 `;
 
 const ItemContainer = styled.div`
@@ -72,8 +73,43 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, loading, error }) =>
-  loading ? (
+const IMDB = styled.div`
+  background-color: #eec100;
+  color: black;
+  padding: 3px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-top: 5px;
+`;
+
+const TITLECONTAINER = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const NICEBUTTON = styled.button`
+  all: unset;
+  padding: 10px;
+  font-size: 20px;
+  margin: 15px;
+  margin-left: 0px;
+  background-color: #eec100;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+`;
+
+const DetailPresenter = ({
+  result,
+  loading,
+  error,
+  currentIndex,
+  content,
+  setIndex,
+}) =>
+  loading ? ( //주의 : HomePresenter와 비교했을 때 jsx안에 들어가면 변수 사용할 때 {}사용 밖이면 안 사용
     <>
       <Helmet>
         <title>Loading | Nomflix</title>
@@ -100,11 +136,16 @@ const DetailPresenter = ({ result, loading, error }) =>
           }
         />
         <Data>
-          <Title>
-            {result.original_title
-              ? result.original_title
-              : result.original_name}
-          </Title>
+          <TITLECONTAINER>
+            <Title>
+              {result.original_title
+                ? result.original_title
+                : result.original_name}
+            </Title>
+            <a href={`https://www.imdb.com/title/${result.imdb_id}`}>
+              <IMDB>IMDb</IMDB>
+            </a>
+          </TITLECONTAINER>
           <ItemContainer>
             <Item>
               {result.release_date
@@ -126,6 +167,14 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <div>
+            {content.map((section, index) => (
+              <NICEBUTTON onClick={() => setIndex(index)}>
+                {section.tab}
+              </NICEBUTTON>
+            ))}
+            <div>{content[currentIndex].content}</div>
+          </div>
         </Data>
       </Content>
     </Container>

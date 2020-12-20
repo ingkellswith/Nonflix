@@ -20,6 +20,7 @@ export const moviesApi = {
         append_to_response: "videos",
       },
     }),
+  cast: (id) => api.get(`movie/${id}/credits`),
   search: (term) =>
     api.get("search/movie", {
       params: {
@@ -38,6 +39,7 @@ export const tvApi = {
         append_to_response: "videos",
       },
     }),
+  cast: (id) => api.get(`tv/${id}/credits`),
   search: (term) =>
     api.get("search/tv", {
       params: {
